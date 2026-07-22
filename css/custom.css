@@ -259,3 +259,115 @@ a.categoryButton svg, a.categoryButton i {
   background-size: 100% 100%;
   animation: none;
 }
+
+/* 分类导航：暖白黏土外壳 */
+#categoryBar {
+  margin-bottom: 20px;
+}
+
+#category-bar.category-bar {
+  height: 58px;
+  padding: 7px;
+  overflow: hidden;
+  background: var(--anzhiyu-card-bg) !important;
+  border: 4px solid #111 !important;
+  border-radius: 16px;
+  box-shadow: 6px 7px 0 #111 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#category-bar.category-bar:hover {
+  transform: translate(2px, 2px);
+  border: 4px solid #111 !important;
+  box-shadow: 3px 4px 0 #111 !important;
+}
+
+/* 深色分类轨道 */
+#category-bar #catalog-bar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 4px 6px;
+  overflow: hidden;
+  background: #2d3342;
+  border: 2px solid #111;
+  border-radius: 10px;
+}
+
+/* 可横向滚动的分类列表 */
+#categoryBar #catalog-list {
+  flex: 1;
+  min-width: 0;
+  gap: 6px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* 普通分类胶囊 */
+#categoryBar .catalog-list-item a {
+  height: 30px;
+  margin: 0;
+  padding: 0 11px;
+  color: #111;
+  background: #b8f5c5;
+  border: 2px solid #111;
+  border-radius: 9px;
+  box-shadow: 2px 2px 0 #111;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* 首页及当前分类 */
+#categoryBar .catalog-list-item:first-child a,
+#categoryBar .catalog-list-item.select a,
+#categoryBar .catalog-list-item.selected a {
+  color: #111;
+  background: #ffcf4a;
+}
+
+/* 胶囊按压反馈 */
+#categoryBar .catalog-list-item a:hover {
+  color: #111;
+  background: #7ee0c3;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #111;
+}
+
+/* 箭头和更多 */
+#categoryBar .category-bar-next {
+  min-width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+#categoryBar a.catalog-more {
+  margin-left: 8px;
+  padding: 3px 8px;
+  color: #111;
+  background: #fffdf8;
+  border: 2px solid #111;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 768px) {
+  #category-bar.category-bar {
+    height: 54px;
+    padding: 6px;
+    border-width: 3px !important;
+    border-radius: 12px;
+    box-shadow: 4px 5px 0 #111 !important;
+  }
+
+  #categoryBar .catalog-list-item a {
+    height: 28px;
+    padding: 0 9px;
+    font-size: 13px;
+  }
+}
