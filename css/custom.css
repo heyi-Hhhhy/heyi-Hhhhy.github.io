@@ -61,18 +61,18 @@ body {
    ========================================================================== */
 
 /* 1. 顶部全局导航栏与字体加粗 */
-#nav {
+nav {
     border-bottom: 4px solid #000000 !important;
     background: #ffffff !important;
 }
-#nav .site-name, #nav .menu_item_share a, #nav #toggle-menu {
+nav .site-name, #nav .menu_item_share a, #nav #toggle-menu {
     font-weight: 900 !important; /* 极粗字体 */
     color: #000000 !important;
     text-transform: uppercase;
 }
 
 /* 2. 左上角巨幅“随便逛逛”大横幅魔改 (图中蓝色区域) */
-#bbTimeList, .banner-cozy, .home_top_banner {
+bbTimeList, .banner-cozy, .home_top_banner {
     background: #4361ee !important; /* 极其纯正、高饱和度的多巴胺电光蓝 */
     border: 4px solid #000000 !important; /* 核心：厚重的正黑色边框 */
     border-radius: 28px !important; /* 标志性的黏土大圆角 */
@@ -85,7 +85,7 @@ body {
     
     transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
-#bbTimeList:hover {
+bbTimeList:hover {
     transform: translate(3px, 3px) !important;
     box-shadow: 
         inset -4px -4px 8px rgba(0, 0, 0, 0.2), 
@@ -94,7 +94,88 @@ body {
 }
 
 /* 3. 巨幅横幅内部的文字与箭头全加粗 */
-#bbTimeList .tags-group-all, #bbTimeList a, #bbTimeList .banner-title {
+bbTimeList .tags-group-all, #bbTimeList a, #bbTimeList .banner-title {
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 0px #000000 !important; /* 文字加黑边描边 */
+}
+
+/* 4. “前端 / 大学 / 生活”三大分类小胶囊 (图中红绿蓝横条) */
+.category-bar-item, .home-category-bar .item {
+    font-weight: 900 !important; /* 字体强制加粗 */
+    border: 3px solid #000000 !important; /* 纯黑包边 */
+    border-radius: 16px !important;
+    box-shadow: 4px 5px 0px #000000 !important; /* 趣味波普硬阴影 */
+    transition: all 0.15s ease !important;
+}
+/* 分类胶囊悬停被按压效果 */
+.category-bar-item:hover, .home-category-bar .item:hover {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 1px 2px 0px #000000 !important;
+}
+
+/* 5. 右侧“Theme-AnZhiYu”大图推荐卡片魔改 (图中右侧暗色大图) */
+.top_group_item, .banner-post-card, .aside-list-item {
+    border: 4px solid #000000 !important;
+    border-radius: 28px !important;
+    overflow: hidden !important; /* 防止内部图片溢出切断圆角 */
+    box-shadow: 8px 12px 0px #000000 !important;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.top_group_item:hover {
+    transform: translate(3px, 3px) !important;
+    box-shadow: 4px 5px 0px #000000 !important;
+}
+
+/* 6. 右下角头像卡片顶部的“吃饱了才有力气干活”小气泡气泡提示 */
+.author-status-box, .status-bar {
+    background: #ff006e !important; /* 极其亮眼的芭比高光粉 */
+    border: 3px solid #000000 !important;
+    border-radius: 12px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    box-shadow: 3px 4px 0px #000000 !important;
+}
+
+/* ==========================================================================
+   UI UX Pro Max - Educational Platform (Claymorphism Master Config)
+   ========================================================================== */
+
+/* 1. 顶部全局导航栏与字体加粗 */
+nav {
+    border-bottom: 4px solid #000000 !important;
+    background: #ffffff !important;
+}
+nav .site-name, #nav .menu_item_share a, #nav #toggle-menu {
+    font-weight: 900 !important; /* 极粗字体 */
+    color: #000000 !important;
+    text-transform: uppercase;
+}
+
+/* 2. 左上角巨幅“随便逛逛”大横幅魔改 (图中蓝色区域) */
+bbTimeList, .banner-cozy, .home_top_banner {
+    background: #4361ee !important; /* 极其纯正、高饱和度的多巴胺电光蓝 */
+    border: 4px solid #000000 !important; /* 核心：厚重的正黑色边框 */
+    border-radius: 28px !important; /* 标志性的黏土大圆角 */
+    
+    /* 核心：完美的内发光与重外阴影叠加，打造橡皮泥充气凸起感 */
+    box-shadow: 
+        inset -8px -8px 16px rgba(0, 0, 0, 0.15), 
+        inset 8px 8px 16px rgba(255, 255, 255, 0.4),
+        8px 12px 0px #000000 !important; 
+    
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+bbTimeList:hover {
+    transform: translate(3px, 3px) !important;
+    box-shadow: 
+        inset -4px -4px 8px rgba(0, 0, 0, 0.2), 
+        inset 4px 4px 8px rgba(255, 255, 255, 0.4),
+        4px 5px 0px #000000 !important;
+}
+
+/* 3. 巨幅横幅内部的文字与箭头全加粗 */
+bbTimeList .tags-group-all, bbTimeList a, bbTimeList .banner-title {
     font-weight: 900 !important;
     color: #ffffff !important;
     text-shadow: 2px 2px 0px #000000 !important; /* 文字加黑边描边 */
