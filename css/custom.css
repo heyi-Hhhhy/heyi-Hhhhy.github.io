@@ -1,0 +1,56 @@
+/* 将首页文章卡片、侧边栏卡片全部升级为黏土拟态风 */
+.recent-post-item, #aside-content .card-widget {
+    background: #ffffff !important;
+    border-radius: 24px !important; /* 增大圆角，符合玩乐、治愈的主题 */
+    border: 4px solid #000000 !important; /* 粗边框，增加插画卡通感 */
+    
+    /* 核心：内外阴影叠加，制造黏土立体凹凸感 */
+    box-shadow: 
+        inset -8px -8px 16px rgba(0, 0, 0, 0.06), 
+        inset 8px 8px 16px rgba(255, 255, 255, 0.9),
+        8px 12px 0px #000000 !important; /* 经典的“重度”外阴影 */
+        
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* Q弹的物理缓动动画 */
+}
+
+/* 鼠标悬停时的卡片“被按压”微互动 */
+.recent-post-item:hover, #aside-content .card-widget:hover {
+    transform: translate(4px, 4px) !important; /* 向右下方位移，假装被按压 */
+    box-shadow: 
+        inset -4px -4px 8px rgba(0, 0, 0, 0.1), 
+        inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+        4px 4px 0px #000000 !important; /* 阴影变小，模拟物理压扁效果 */
+}
+
+/* 修改博客全局主按钮（如阅读更多、提交等） */
+.search-btn, .recent-post-item .more-btn, #aside-content .card-info-social a {
+    background: #ffbe0b !important; /* 活力明黄色 */
+    color: #000000 !important;
+    font-weight: bold !important;
+    border: 3px solid #000000 !important;
+    border-radius: 12px !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+}
+
+/* 鼠标悬停在按钮上时变成薄荷绿 */
+.search-btn:hover, .recent-post-item .more-btn:hover {
+    background: #06d6a0 !important; /* 活力薄荷绿 */
+    transform: translate(1px, 1px) !important;
+    box-shadow: 1px 1px 0px #000000 !important;
+}
+
+/* 文章分类和标签小胶囊（模拟课程目录预览和进度条视觉） */
+.article-meta__tags, .article-meta__categories, .headline {
+    background: #ff006e !important; /* 芭比粉 */
+    color: white !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    border: 2px solid #000000 !important;
+}
+
+body {
+    background-color: #f4f7f6 !important; /* 浅柔和灰绿，让亮色的卡片和按钮更跳跃 */
+    background-image: radial-gradient(#000000 1px, transparent 0) !important; /* 添加复古波点背景，增加玩乐氛围 */
+    background-size: 24px 24px !important;
+    opacity: 0.95;
+}
