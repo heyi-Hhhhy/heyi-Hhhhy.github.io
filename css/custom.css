@@ -248,3 +248,14 @@ a.categoryButton svg, a.categoryButton i {
   transform: translate(2px, 3px) !important;
   box-shadow: 1px 2px 0 #111 !important;
 }
+
+[data-theme="light"] #aside-content > .card-widget.card-info::before {
+  background: linear-gradient(
+    145deg,
+    #f4b860 0%,
+    #f28c78 50%,
+    #df6f91 100%
+  );
+  background-size: 100% 100%;
+  animation: none;
+}
