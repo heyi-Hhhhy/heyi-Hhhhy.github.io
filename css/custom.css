@@ -71,144 +71,171 @@ nav .site-name, #nav .menu_item_share a, #nav #toggle-menu {
     text-transform: uppercase;
 }
 
-/* 2. 左上角巨幅“随便逛逛”大横幅魔改 (图中蓝色区域) */
-bbTimeList, .banner-cozy, .home_top_banner {
-    background: #4361ee !important; /* 极其纯正、高饱和度的多巴胺电光蓝 */
-    border: 4px solid #000000 !important; /* 核心：厚重的正黑色边框 */
-    border-radius: 28px !important; /* 标志性的黏土大圆角 */
-    
-    /* 核心：完美的内发光与重外阴影叠加，打造橡皮泥充气凸起感 */
-    box-shadow: 
-        inset -8px -8px 16px rgba(0, 0, 0, 0.15), 
-        inset 8px 8px 16px rgba(255, 255, 255, 0.4),
-        8px 12px 0px #000000 !important; 
-    
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-bbTimeList:hover {
-    transform: translate(3px, 3px) !important;
-    box-shadow: 
-        inset -4px -4px 8px rgba(0, 0, 0, 0.2), 
-        inset 4px 4px 8px rgba(255, 255, 255, 0.4),
-        4px 5px 0px #000000 !important;
-}
-
-/* 3. 巨幅横幅内部的文字与箭头全加粗 */
-bbTimeList .tags-group-all, #bbTimeList a, #bbTimeList .banner-title {
-    font-weight: 900 !important;
-    color: #ffffff !important;
-    text-shadow: 2px 2px 0px #000000 !important; /* 文字加黑边描边 */
-}
-
-/* 4. “前端 / 大学 / 生活”三大分类小胶囊 (图中红绿蓝横条) */
-.category-bar-item, .home-category-bar .item {
-    font-weight: 900 !important; /* 字体强制加粗 */
-    border: 3px solid #000000 !important; /* 纯黑包边 */
-    border-radius: 16px !important;
-    box-shadow: 4px 5px 0px #000000 !important; /* 趣味波普硬阴影 */
-    transition: all 0.15s ease !important;
-}
-/* 分类胶囊悬停被按压效果 */
-.category-bar-item:hover, .home-category-bar .item:hover {
-    transform: translate(2px, 2px) !important;
-    box-shadow: 1px 2px 0px #000000 !important;
-}
-
-/* 5. 右侧“Theme-AnZhiYu”大图推荐卡片魔改 (图中右侧暗色大图) */
-.top_group_item, .banner-post-card, .aside-list-item {
-    border: 4px solid #000000 !important;
-    border-radius: 28px !important;
-    overflow: hidden !important; /* 防止内部图片溢出切断圆角 */
-    box-shadow: 8px 12px 0px #000000 !important;
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-.top_group_item:hover {
-    transform: translate(3px, 3px) !important;
-    box-shadow: 4px 5px 0px #000000 !important;
-}
-
-/* 6. 右下角头像卡片顶部的“吃饱了才有力气干活”小气泡气泡提示 */
-.author-status-box, .status-bar {
-    background: #ff006e !important; /* 极其亮眼的芭比高光粉 */
-    border: 3px solid #000000 !important;
-    border-radius: 12px !important;
-    font-weight: 900 !important;
-    color: #ffffff !important;
-    box-shadow: 3px 4px 0px #000000 !important;
-}
-
-
 /* ==========================================================================
-   UI UX Pro Max - 分类栏专用波普黏土风魔改
+   Home Top – Educational Platform Claymorphism
+   目标元素（来自 themes/anzhiyu/layout/includes/top/top.pug）:
+     .categoryItem > a.categoryButton.blue|red|green
+     .topGroup .todayCard（新品主题大图卡）
+     #aside-content .author-info__sayhi（右下角小问候气泡）
    ========================================================================== */
 
+/* 容器不裁外阴影，避免厚边裸露出去 */
+.categoryItem { overflow: visible !important; }
+.topGroup     { overflow: visible !important; }
+#aside-content > .card-widget.card-info {
+  /* 主卡片用 hidden 把 ::before 蓝色裁进圆角，同时不影响 box-shadow */
+  overflow: hidden !important;
+}
+/* 原本是为了外阴影不裁才加的 visible，现在不需要了。
+   如果后续发现 sayhi 气泡需要保持可见，可改在它本身加 position: relative 、z-index 提高。 */
 
-/* 1. 顶部全局导航栏与字体加粗 */
-#nav {
-    border-bottom: 4px solid #000000 !important;
-    background: #ffffff !important;
-}
-#nav .site-name, #nav .menu_item_share a, #nav #toggle-menu {
-    font-weight: 900 !important; /* 极粗字体 */
-    color: #000000 !important;
-    text-transform: uppercase;
-}
+/* ---------- 三大学习方向彩色卡：黏土 + 鲜艳渐变 ---------- */
 
-
-/* 1. 全局重塑分类栏容器，让其背景与卡片产生完美层次 */
-#category-bar {
-    padding: 10px !important;
-    background: transparent !important;
+/* 前端（编程蓝）：天空 → 深海 */
+a.categoryButton.blue {
+  background: linear-gradient(135deg,
+    #8ed4ff 0%, #4fa8ef 45%, #2563eb 100%) !important;
+  background-size: 200% 200% !important;
+  border: 3px solid #111 !important;
+  border-radius: 18px !important;
+  color: #fff !important;
+  text-shadow: 1px 2px 0 rgba(0, 20, 60, 0.35) !important;
+  box-shadow:
+    inset 6px 6px 14px rgba(255, 255, 255, 0.55),
+    inset -6px -6px 14px rgba(10, 30, 80, 0.45),
+    0 10px 22px -6px rgba(37, 99, 235, 0.55),
+    6px 8px 0 #111 !important;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .25s cubic-bezier(.34,1.56,.64,1) !important;
 }
-
-/* 2. 深度重构“前端、大学、生活”这三个图形卡片 */
-#category-bar .category-bar-item {
-    font-weight: 900 !important;          /* 1. 字体强制使用波普最粗体 */
-    font-size: 1.05rem !important;        /* 2. 略微放大字号，增加视觉冲击力 */
-    border: 3.5px solid #000000 !important; /* 3. 核心：标志性的纯黑粗描边 */
-    border-radius: 16px !important;       /* 4. 黏土风标志性大圆角 */
-    padding: 10px 24px !important;       /* 5. 增大内边距，让卡片看起来更饱满Q弹 */
-    margin: 0 8px !important;            /* 6. 让三个小卡片互不拥挤 */
-    
-    /* 7. 核心：利用复合双阴影。内部白发光+外部硬黑斜阴影，模拟立体黏土块 */
-    box-shadow: 
-        inset -4px -4px 8px rgba(0, 0, 0, 0.15), 
-        inset 4px 4px 8px rgba(255, 255, 255, 0.35),
-        6px 8px 0px #000000 !important;
-        
-    /* 8. 引入玩乐属性的物理弹性震颤动效 */
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-
-/* 3. 为三个卡片注入“高饱和度活力色彩” (Vibrant, Engaging Colors) */
-/* 前端卡片 - 激进电光蓝 */
-#category-bar .category-bar-item:nth-child(1) {
-    background: #00b4d8 !important;
-    color: #ffffff !important;
-}
-/* 大学卡片 - 多巴胺落日橙 */
-#category-bar .category-bar-item:nth-child(2) {
-    background: #ff7096 !important; /* 调整为更甜美的黏土多巴胺粉红 */
-    color: #ffffff !important;
-}
-/* 生活卡片 - 活力薄荷绿 */
-#category-bar .category-bar-item:nth-child(3) {
-    background: #06d6a0 !important;
-    color: #ffffff !important;
+a.categoryButton.blue:hover {
+  transform: translate(2px, 4px) !important;
+  box-shadow:
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5),
+    inset -4px -4px 10px rgba(10, 30, 80, 0.4),
+    0 6px 14px -4px rgba(37, 99, 235, 0.5),
+    3px 4px 0 #111 !important;
 }
 
-/* 4. 模拟物理被真实“向下按压”的悬停与点击回弹效果 */
-#category-bar .category-bar-item:hover {
-    transform: translate(3px, 4px) !important; /* 悬停时往右下方位移 */
-    /* 阴影随高度变矮而急剧收缩变窄，完美复刻橡皮泥物理质感 */
-    box-shadow: 
-        inset -2px -2px 4px rgba(0, 0, 0, 0.2), 
-        inset 2px 2px 4px rgba(255, 255, 255, 0.3),
-        2px 3px 0px #000000 !important;
+/* 大学（番茄橙）：蜜桃 → 火焰 */
+a.categoryButton.red {
+  background: linear-gradient(135deg,
+    #ffd194 0%, #ff8a5c 45%, #ef4444 100%) !important;
+  background-size: 200% 200% !important;
+  border: 3px solid #111 !important;
+  border-radius: 18px !important;
+  color: #fff !important;
+  text-shadow: 1px 2px 0 rgba(110, 20, 0, 0.35) !important;
+  box-shadow:
+    inset 6px 6px 14px rgba(255, 255, 255, 0.55),
+    inset -6px -6px 14px rgba(120, 20, 10, 0.45),
+    0 10px 22px -6px rgba(239, 68, 68, 0.55),
+    6px 8px 0 #111 !important;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .25s cubic-bezier(.34,1.56,.64,1) !important;
+}
+a.categoryButton.red:hover {
+  transform: translate(2px, 4px) !important;
+  box-shadow:
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5),
+    inset -4px -4px 10px rgba(120, 20, 10, 0.4),
+    0 6px 14px -4px rgba(239, 68, 68, 0.5),
+    3px 4px 0 #111 !important;
 }
 
-/* 5. 补充细节：强行加粗卡片内的文字描边，彻底消除廉价网页感 */
-#category-bar .category-bar-item a {
-    color: inherit !important;
-    text-shadow: 1.5px 1.5px 0px #000000 !important; /* 文字自带一圈黑影 */
+/* 生活（薄荷绿）：薄荷 → 森林 */
+a.categoryButton.green {
+  background: linear-gradient(135deg,
+    #a7f3d0 0%, #34d399 45%, #059669 100%) !important;
+  background-size: 200% 200% !important;
+  border: 3px solid #111 !important;
+  border-radius: 18px !important;
+  color: #fff !important;
+  text-shadow: 1px 2px 0 rgba(0, 60, 30, 0.35) !important;
+  box-shadow:
+    inset 6px 6px 14px rgba(255, 255, 255, 0.55),
+    inset -6px -6px 14px rgba(5, 70, 45, 0.45),
+    0 10px 22px -6px rgba(5, 150, 105, 0.55),
+    6px 8px 0 #111 !important;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .25s cubic-bezier(.34,1.56,.64,1) !important;
+}
+a.categoryButton.green:hover {
+  transform: translate(2px, 4px) !important;
+  box-shadow:
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5),
+    inset -4px -4px 10px rgba(5, 70, 45, 0.4),
+    0 6px 14px -4px rgba(5, 150, 105, 0.5),
+    3px 4px 0 #111 !important;
+}
+
+/* 暗色模式：高光降一档，避免过曝 */
+[data-theme="dark"] a.categoryButton.blue,
+[data-theme="dark"] a.categoryButton.red,
+[data-theme="dark"] a.categoryButton.green {
+  box-shadow:
+    inset 6px 6px 14px rgba(255, 255, 255, 0.25),
+    inset -6px -6px 14px rgba(0, 0, 0, 0.55),
+    0 10px 22px -6px rgba(0, 0, 0, 0.7),
+    6px 8px 0 #000 !important;
+}
+
+/* 分类卡上的大图标：放大、加柔光、更“教学插画” */
+a.categoryButton svg, a.categoryButton i {
+  font-size: 6rem !important;
+  opacity: .25 !important;
+  filter: blur(1px) drop-shadow(0 4px 6px rgba(0,0,0,.25)) !important;
+  transform: rotate(15deg) scale(1) !important;
+}
+.categoryItem:hover svg, .categoryItem:hover i {
+  opacity: .55 !important;
+  filter: blur(0) drop-shadow(0 6px 10px rgba(0,0,0,.3)) !important;
+  transform: rotate(8deg) scale(1.08) !important;
+}
+
+/* ---------- 右侧 Theme-AnZhiYu 大图卡：暗色黏土 ---------- */
+.topGroup .todayCard {
+  border: 4px solid #111 !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow:
+    inset 8px 8px 18px rgba(255, 255, 255, 0.10),
+    inset -8px -8px 18px rgba(0, 0, 0, 0.55),
+    0 14px 28px -10px rgba(0, 0, 0, 0.55),
+    8px 10px 0 #111 !important;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .3s cubic-bezier(.34,1.56,.64,1) !important;
+}
+.topGroup .todayCard:hover {
+  transform: translate(3px, 5px) !important;
+  box-shadow:
+    inset 4px 4px 10px rgba(255, 255, 255, 0.10),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.55),
+    0 8px 18px -8px rgba(0, 0, 0, 0.55),
+    4px 5px 0 #111 !important;
+}
+.topGroup .todayCard .todayCard-cover { border-radius: 0 !important; }
+.topGroup .todayCard .todayCard-title {
+  font-weight: 900 !important;
+  letter-spacing: .5px !important;
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, .55) !important;
+}
+.topGroup .todayCard .todayCard-tips {
+  font-weight: 700 !important;
+  opacity: .9 !important;
+}
+
+/* Banner 上的“更多推荐”按钮：白底厚黑边 */
+.topGroup .banner-button {
+  background: #fff !important;
+  color: #111 !important;
+  border: 3px solid #111 !important;
+  border-radius: 18px !important;
+  font-weight: 800 !important;
+  box-shadow: 4px 5px 0 #111 !important;
+  transition: transform .15s ease, box-shadow .15s ease !important;
+}
+.topGroup .banner-button:hover {
+  transform: translate(2px, 3px) !important;
+  box-shadow: 1px 2px 0 #111 !important;
 }
