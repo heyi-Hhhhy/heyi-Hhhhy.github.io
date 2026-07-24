@@ -371,3 +371,61 @@ a.categoryButton svg, a.categoryButton i {
     font-size: 13px;
   }
 }
+
+/* Post header contrast */
+[data-theme=light] #page-header.post-bg {
+  height: 390px;
+  min-height: 390px;
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(135deg, #263649 0%, #315f60 58%, #c96f78 100%)
+    !important;
+  background-size: 24px 24px, 100% 100%;
+}
+
+[data-theme=light] #post-info .post-title {
+  color: #fff !important;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme=light] #post-info #post-meta,
+[data-theme=light] #post-info #post-meta a {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+[data-theme=light] #post-info .post-meta-original {
+  color: #111 !important;
+  background: #ffcf4a !important;
+  border: 2px solid #111;
+  border-radius: 8px;
+  padding: 3px 9px;
+  box-shadow: 2px 2px 0 #111;
+}
+
+[data-theme=light] .parallax > use:nth-child(1) {
+  fill: rgba(247, 243, 234, 0.72) !important;
+}
+
+[data-theme=light] .parallax > use:nth-child(2) {
+  fill: rgba(247, 243, 234, 0.48) !important;
+}
+
+[data-theme=light] .parallax > use:nth-child(3) {
+  fill: rgba(247, 243, 234, 0.24) !important;
+}
+
+[data-theme=light] .parallax > use:nth-child(4) {
+  fill: #f7f3ea !important;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme=light] #page-header.post-bg {
+    height: 340px;
+    min-height: 340px;
+  }
+
+  [data-theme=light] #post-info .post-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
